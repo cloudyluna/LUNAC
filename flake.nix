@@ -21,6 +21,7 @@
             openssl
             zlib
             libpng
+            libGL
             SDL
             llvmPackages_19.libcxxClang
             llvmPackages_19.compiler-rt
