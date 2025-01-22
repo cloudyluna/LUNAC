@@ -37,7 +37,7 @@
             export CXX=clang++
           '';
 
-          LD_LIBRARY_PATH = "${lib.makeLibraryPath buildInputs}";
+          LD_LIBRARY_PATH = "${lib.makeLibraryPath buildInputs}:/run/opengl-driver/lib";
         };
       }
     );
