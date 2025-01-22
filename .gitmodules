@@ -1,0 +1,16 @@
+[submodule "OneLife"]
+	path = OneLife
+	url = https://github.com/cloudyluna/OneLife
+	branch = LUNAC
+[submodule "minorGems"]
+	path = minorGems
+	url = https://github.com/cloudyluna/minorGems
+	branch = LUNAC
+[submodule "OneLifeData7"]
+	path = OneLifeData7
+	url = https://github.com/cloudyluna/OneLifeData7
+	branch = LUNAC
+[submodule "miniOneLifeCompile"]
+	path = miniOneLifeCompile
+	url = https://github.com/cloudyluna/miniOneLifeCompile
+	branch = LUNAC
