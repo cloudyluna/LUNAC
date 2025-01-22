@@ -16,7 +16,7 @@ client: set-optimization
 		./compile.sh && \
 		./${REVERT_OPTIMIZATION} ../${MAKEFILE_VARS}
 
-run-client:
+run-client: client
 	cd $(OUTPUT_DIR) && ./${CLIENT}
 
 server: set-optimization
@@ -24,11 +24,11 @@ server: set-optimization
 		./server.sh && \
 		./${REVERT_OPTIMIZATION} ../${MAKEFILE_VARS}
 
-run-server:
+run-server: server
 	cd ${OUTPUT_DIR} && ./${SERVER}
 
 clean:
 	cd $(COMPILE_SCRIPTS_DIR) && ./cleanOldBuildsAndOptionallyCaches.sh
 
-purge:
+purge: clean
 	rm -rf ${OUTPUT_DIR}
