@@ -3,7 +3,7 @@ CLIENT=OneLife
 SERVER=OneLifeServer
 OUTPUT_DIR=output
 COMPILE_SCRIPTS_DIR=miniOneLifeCompile
-OPTIMIZATION=debug
+OPTIMIZATION=debug # debug | debug_no_warn | debug_asan | fast
 MAKEFILE_VARS=minorGems/game/platforms/SDL/Makefile.common
 REVERT_OPTIMIZATION=set-optimization.sh debug
 
