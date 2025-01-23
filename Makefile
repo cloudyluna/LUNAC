@@ -1,3 +1,4 @@
+DEBUGGER=lldb
 CLIENT=OneLife
 SERVER=OneLifeServer
 OUTPUT_DIR=output
@@ -19,6 +20,9 @@ client: set-optimization
 run-client: client
 	cd $(OUTPUT_DIR) && ./${CLIENT}
 
+debug-client: client
+	cd $(OUTPUT_DIR) && ${DEBUGGER} ./${CLIENT}
+
 server: set-optimization
 	cd ${COMPILE_SCRIPTS_DIR} && \
 		./server.sh && \
@@ -26,6 +30,9 @@ server: set-optimization
 
 run-server: server
 	cd ${OUTPUT_DIR} && ./${SERVER}
+
+debug-server: server
+	cd $(OUTPUT_DIR) && $(DEBUGGER) ./${SERVER}
 
 clean:
 	cd $(COMPILE_SCRIPTS_DIR) && ./cleanOldBuildsAndOptionallyCaches.sh
