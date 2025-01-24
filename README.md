@@ -5,12 +5,16 @@ A personal modded client (and server) based on THOL vanilla client v20319.
 Just exploring..that's all.
 
 ## Features & Changes
-- On-screen chat log panel to retain last spoken 17 messages from nearby players.
+- On-screen chat log panel to retain last spoken 17 messages from 
+nearby players. Can be toggled on or off with `SHIFT+L` key.
 
 ### Technical
-- Compilable with C++ 23 and `clang++` 19.4+.
+- Consistent and automatically formatted OneLife's `C++` code using 
+`clang-format` using default `Microsoft` style.
+- Compilable with C++ 23 standard and `clang` 19.4+.
 - Simple development flow with `flake.nix` and Makefile.
-- `cppcheck` and clang ASAN is availabled to be used.
+- `cppcheck`, clang ASAN and many other clang based tools are available 
+for use.
 
 ## Building
 
