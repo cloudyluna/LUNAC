@@ -12,4 +12,4 @@ jobs:
           sparse-checkout: .
           submodules: 'recursive'
       - uses: nixbuild/nix-quick-install-action@v29
-      - run: nix develop --command make
+      - run: nix develop --command make OPTIMIZATION=debug_no_warn
