@@ -7,6 +7,8 @@ Just exploring..that's all.
 ## Features & Changes
 - On-screen chat log panel to retain last spoken 17 messages from 
 nearby players. Can be toggled on or off with `SHIFT+L` key.
+    
+    ![Image](https://github.com/user-attachments/assets/a404bcca-d656-481b-bdda-ff99f7e02150)
 
 ### Technical
 - Consistent and automatically formatted OneLife's `C++` code using 
