@@ -34,6 +34,9 @@ run-server: server
 debug-server: server
 	cd $(OUTPUT_DIR) && $(DEBUGGER) ./${SERVER}
 
+format:
+	cd ./OneLife && ./format.sh
+
 clean:
 	cd $(COMPILE_SCRIPTS_DIR) && ./cleanOldBuildsAndOptionallyCaches.sh
 
