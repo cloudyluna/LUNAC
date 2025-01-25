@@ -29,8 +29,10 @@
             llvmPackages_19.libcxxStdenv
             llvmPackages_19.libllvm
             llvmPackages_19.clang-tools
+            lldb_19
+            gnumake
             cppcheck
-            imagemagick
+            imagemagick_light
             valgrind
           ];
           shellHook = ''

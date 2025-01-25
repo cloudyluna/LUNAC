@@ -10,9 +10,9 @@ MAKEFILE_VARS=$(MINORGEMS_DIR)/game/platforms/SDL/Makefile.common
 REVERT_OPTIMIZATION=setOptimization.sh debug
 
 all:
-	$(MAKE) client
-	$(MAKE) clean
-	$(MAKE) server
+	$(MAKE) client OPTIMIZATION=$(OPTIMIZATION)
+	$(MAKE) clean OPTIMZATION=$(OPTIMIZATION)
+	$(MAKE) server OPTIMIZATION=$(OPTIMIZATION)
 
 set-optimization:
 	cd $(MINIONELIFECOMPILE_DIR) && \
