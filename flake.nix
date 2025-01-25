@@ -32,7 +32,7 @@
             lldb_19
             gnumake
             cppcheck
-            imagemagick_light
+            imagemagick
             valgrind
           ];
           shellHook = ''
