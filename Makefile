@@ -1,44 +1,51 @@
 DEBUGGER=lldb
+ONELIFE_DIR=OneLife
+MINORGEMS_DIR=minorGems
+MINIONELIFECOMPILE_DIR=miniOneLifeCompile
 CLIENT=OneLife
 SERVER=OneLifeServer
 OUTPUT_DIR=output
-COMPILE_SCRIPTS_DIR=miniOneLifeCompile
 OPTIMIZATION=debug # debug | debug_no_warn | debug_asan | fast
-MAKEFILE_VARS=minorGems/game/platforms/SDL/Makefile.common
-REVERT_OPTIMIZATION=set-optimization.sh debug
+MAKEFILE_VARS=$(MINORGEMS_DIR)/game/platforms/SDL/Makefile.common
+REVERT_OPTIMIZATION=setOptimization.sh debug
 
-all: client server
+all:
+	$(MAKE) client
+	$(MAKE) clean
+	$(MAKE) server
 
 set-optimization:
-	cd ${COMPILE_SCRIPTS_DIR} && ./set-optimization.sh ${OPTIMIZATION} ../${MAKEFILE_VARS}
+	cd $(MINIONELIFECOMPILE_DIR) && \
+		./setOptimization.sh $(OPTIMIZATION) ../$(MAKEFILE_VARS)
 
 client: set-optimization
-	cd ${COMPILE_SCRIPTS_DIR} && \
+	cd $(MINIONELIFECOMPILE_DIR) && \
 		./compile.sh && \
-		./${REVERT_OPTIMIZATION} ../${MAKEFILE_VARS}
+		./$(REVERT_OPTIMIZATION) ../$(MAKEFILE_VARS)
 
 run-client: client
-	cd $(OUTPUT_DIR) && ./${CLIENT}
+	cd $(OUTPUT_DIR) && ./$(CLIENT)
 
 debug-client: client
-	cd $(OUTPUT_DIR) && ${DEBUGGER} ./${CLIENT}
+	cd $(OUTPUT_DIR) && $(DEBUGGER) ./$(CLIENT)
 
 server: set-optimization
-	cd ${COMPILE_SCRIPTS_DIR} && \
+	cd $(MINIONELIFECOMPILE_DIR) && \
 		./server.sh && \
-		./${REVERT_OPTIMIZATION} ../${MAKEFILE_VARS}
+		./$(REVERT_OPTIMIZATION) ../$(MAKEFILE_VARS)
 
 run-server: server
-	cd ${OUTPUT_DIR} && ./${SERVER}
+	cd $(OUTPUT_DIR) && ./$(SERVER)
 
 debug-server: server
-	cd $(OUTPUT_DIR) && $(DEBUGGER) ./${SERVER}
+	cd $(OUTPUT_DIR) && $(DEBUGGER) ./$(SERVER)
 
 format:
-	cd ./OneLife && ./format.sh
+	cd ./$(ONELIFE_DIR) && ./format.sh
 
 clean:
-	cd $(COMPILE_SCRIPTS_DIR) && ./cleanOldBuildsAndOptionallyCaches.sh
+	cd $(MINIONELIFECOMPILE_DIR) && \
+		./cleanOldBuildsAndOptionallyCaches.sh
 
 purge: clean
-	rm -rf ${OUTPUT_DIR}
+	rm -rf $(OUTPUT_DIR)
