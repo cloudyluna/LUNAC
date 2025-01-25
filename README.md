@@ -12,7 +12,7 @@ nearby players. Can be toggled on or off with `SHIFT+L` key.
 
 ### Technical
 - Consistent and automatically formatted OneLife's `C++` code using 
-`clang-format` using default `Microsoft` style.
+`clang-format` formatter. It uses the default `Microsoft`'s recommended style.
 - Compilable with C++ 23 standard and `clang` 19.4+.
 - Simple development flow with `flake.nix` and Makefile.
 - `cppcheck`, clang ASAN and many other clang based tools are available 
