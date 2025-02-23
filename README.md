@@ -9,6 +9,9 @@ Just exploring..that's all.
 nearby players. Can be toggled on or off with `SHIFT+L` key.
     
     ![Image](https://github.com/user-attachments/assets/a404bcca-d656-481b-bdda-ff99f7e02150)
+- Quick mark object coordinates on hover when there's no given argument. 
+
+    ![Image](https://github.com/user-attachments/assets/0b010a4d-d654-41e9-98cf-fd3a39a28b5d)
 
 ### Technical
 - Consistent and automatically formatted OneLife's `C++` code using 
